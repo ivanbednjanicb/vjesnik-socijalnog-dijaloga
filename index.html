@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0b2f5b">
+  <meta name="description" content="Neslužbeni responzivni digitalno izdanje Vjesnika o socijalnom dijalogu — rujan 2026.">
+  <meta property="og:title" content="Vjesnik o socijalnom dijalogu — rujan 2026.">
+  <meta property="og:description" content="Obrazovanje uz rad: od postojećih mjera do osobnih računa za učenje (ILA)">
+  <title>Vjesnik o socijalnom dijalogu — rujan 2026.</title>
+
+  <style>
+    :root{
+      --navy:#0b2f5b;
+      --navy-2:#123f74;
+      --blue:#1769aa;
+      --blue-soft:#eaf3fb;
+      --red:#c93b3b;
+      --gold:#d6a735;
+      --ink:#152235;
+      --muted:#5f6d7d;
+      --paper:#ffffff;
+      --canvas:#f3f6f9;
+      --line:#dce4ec;
+      --line-strong:#c6d2de;
+      --success:#2f7a52;
+      --radius:18px;
+      --shadow:0 16px 40px rgba(17,44,74,.09);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--canvas);
+      color:var(--ink);
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height:1.58;
+      text-rendering:optimizeLegibility;
+    }
+    img,svg{max-width:100%;display:block}
+    a{color:var(--blue);text-underline-offset:3px}
+    a:hover{text-decoration-thickness:2px}
+    button,a{touch-action:manipulation}
+    :focus-visible{outline:3px solid #f0b323;outline-offset:3px;border-radius:6px}
+    .skip{
+      position:absolute;left:-9999px;top:8px;z-index:9999;
+      background:#fff;color:#000;padding:10px 14px;border-radius:8px;
+      box-shadow:var(--shadow)
+    }
+    .skip:focus{left:12px}
+    .shell{max-width:var(--max);margin:auto;padding-left:20px;padding-right:20px}
+
+
+    ::selection{background:#dbeaf7;color:var(--navy)}
+    .shell.narrow{max-width:var(--reading)}
+    .rule{height:1px;background:var(--line);margin:28px 0}
+    .sr-only{
+      position:absolute!important;width:1px!important;height:1px!important;
+      padding:0!important;margin:-1px!important;overflow:hidden!important;
+      clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;
+    }
+    /* Masthead */
+    .govbar{
+      background:#fff;
+      color:var(--ink);
+      border-bottom:3px solid var(--red);
+    }
+    .govbar .shell{
+      min-height:62px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      padding-top:7px;
+      padding-bottom:7px;
+    }
+    .govbrand{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      min-width:0;
+    }
+    .govmark-crop{
+      width:38px;
+      height:48px;
+      overflow:hidden;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+    }
+    .gov-mark{
+      display:block;
+      height:48px;
+      width:auto;
+      max-width:none;
+      flex:0 0 auto;
+      filter:none;
+    }
+    .gov-office{
+      line-height:1.06;
+      color:var(--ink);
+      font-family:"Vlada RH","Trebuchet MS","Segoe UI",Arial,sans-serif;
+      letter-spacing:-.01em;
+    }
+    .gov-office strong{
+      display:block;
+      font-size:.99rem;
+      font-weight:800;
+      color:#1b2735;
+      letter-spacing:-.015em;
+    }
+    .gov-office span{
+      display:block;
+      margin-top:3px;
+      font-size:.77rem;
+      font-weight:600;
+      color:#6a7582;
+      letter-spacing:.002em;
+    }
+    /* Publication nav */
+    .pubnav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 2px 10px rgba(17,44,74,.03);
+    }
+    .pubnav .shell{
+      min-height:54px;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:22px;
+    }
+    .pubname{
+      font-weight:850;
+      color:var(--navy);
+      letter-spacing:-.018em;
+      white-space:nowrap;
+      font-size:1.05rem;
+    }
+    .pubdate{
+      justify-self:end;
+      font-size:.70rem;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      color:#fff;
+      background:var(--red);
+      padding:7px 12px;
+      border-radius:999px;
+      font-weight:900;
+      white-space:nowrap;
+      box-shadow:0 4px 12px rgba(201,59,59,.16);
+    }
+    .links{display:flex;gap:3px;flex-wrap:wrap;justify-content:center}
+    .links a{
+      color:#435266;
+      font-weight:720;
+      font-size:.84rem;
+      text-decoration:none;
+      padding:7px 9px;
+      border-radius:9px;
+      transition:background .15s ease,color .15s ease;
+    }
+    .links a:hover{background:var(--blue-soft);color:var(--navy)}
+
+    /* Hero */
+    .hero{
+      background:
+        radial-gradient(circle at 86% 15%,rgba(214,167,53,.13),transparent 21rem),
+        radial-gradient(circle at 8% 95%,rgba(23,105,170,.08),transparent 22rem),
+        linear-gradient(145deg,#ffffff 0%,#fbfcfe 52%,#f1f6fb 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero .shell{
+      display:grid;
+      grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);
+      gap:46px;
+      align-items:center;
+      padding-top:48px;padding-bottom:42px;
+    }
+    .overline{
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--navy);font-size:.76rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase
+    }
+    .overline::before{
+      content:"";width:28px;height:3px;border-radius:3px;background:var(--red)
+    }
+    h1,h2,h3{letter-spacing:-.025em}
+    h1{
+      color:var(--navy);
+      font-size:clamp(2.7rem,6vw,5.15rem);
+      line-height:.95;
+      margin:16px 0 15px;
+      max-width:10.5ch;
+      text-wrap:balance;
+    }
+    h1 small{
+      display:block;
+      font-size:.39em;
+      line-height:1.2;
+      letter-spacing:-.01em;
+      margin-top:12px;
+      color:var(--navy-2);
+      max-width:24ch;
+      text-wrap:balance;
+    }
+    .dek{
+      font-size:clamp(1.06rem,1.6vw,1.22rem);
+      max-width:720px;
+      color:#354960;
+      margin:0 0 22px;
+      line-height:1.62;
+    }
+    .meta{
+      display:flex;flex-wrap:wrap;gap:10px 18px;
+      font-size:.88rem;color:var(--muted);margin-bottom:22px
+    }
+    .meta span{display:inline-flex;align-items:center;gap:7px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      border:1px solid var(--navy);
+      border-radius:10px;
+      padding:12px 16px;
+      font-weight:820;
+      font-size:.94rem;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:transform .15s ease,box-shadow .15s ease,background .15s ease
+    }
+    .btn.primary{background:var(--navy);color:#fff}
+    .btn.secondary{background:#fff;color:var(--navy)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(11,47,91,.12)}
+
+    .coverpanel{
+      position:relative;overflow:hidden;min-height:390px;
+      border-radius:24px;
+      background:
+        linear-gradient(150deg,#0a2f5b 0%,#0f4a83 64%,#1d72ad 100%);
+      color:#fff;
+      box-shadow:0 20px 46px rgba(11,47,91,.17);
+      padding:30px;
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .coverpanel:before,.coverpanel:after{
+      content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.09)
+    }
+    .coverpanel:before{width:260px;height:260px;right:-80px;top:-80px}
+    .coverpanel:after{width:140px;height:140px;left:-45px;bottom:-45px}
+    .cover-num{
+      align-self:flex-end;
+      font-size:clamp(5rem,10vw,8rem);font-weight:900;line-height:.85;
+      color:#fff;opacity:.14;letter-spacing:-.07em
+    }
+    .cover-kicker{font-size:.77rem;font-weight:900;text-transform:uppercase;letter-spacing:.09em;color:#d7e9f8}
+    .cover-title{font-size:2rem;line-height:1.06;font-weight:850;max-width:13ch;margin:8px 0 17px}
+    .cover-rule{height:1px;background:rgba(255,255,255,.28);margin:12px 0 16px}
+    .cover-quote{font-size:1rem;color:rgba(255,255,255,.83);max-width:32ch}
+    .prototype-note{
+      margin-top:12px;font-size:.78rem;color:rgba(255,255,255,.67)
+    }
+
+
+    .issue-strip{
+      margin-top:-18px;
+      position:relative;
+      z-index:2;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 10px 28px rgba(17,44,74,.08);
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      overflow:hidden;
+    }
+    .issue-strip>a{
+      padding:16px 18px;
+      border-right:1px solid var(--line);
+      min-width:0;
+      text-decoration:none;
+      color:inherit;
+      transition:background .15s ease, transform .15s ease;
+    }
+    .issue-strip>a:hover{
+      background:#f7fbff;
+    }
+    .issue-strip>a:focus-visible{
+      position:relative;
+      z-index:1;
+    }
+    .issue-strip>a:last-child{border-right:0}
+    .issue-strip span{
+      display:block;
+      font-size:.68rem;
+      font-weight:900;
+      color:var(--red);
+      letter-spacing:.08em;
+      margin-bottom:3px;
+    }
+    .issue-strip strong{
+      display:block;
+      color:var(--navy);
+      font-size:.92rem;
+      line-height:1.2;
+    }
+    .issue-strip small{
+      display:block;
+      color:var(--muted);
+      font-size:.76rem;
+      margin-top:4px;
+      line-height:1.3;
+    }
+    main{padding-top:34px;padding-bottom:78px}
+    .section{scroll-margin-top:86px;margin-top:48px}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:28px;
+      margin-bottom:20px;
+      padding-bottom:2px;
+    }
+    .eyebrow{
+      color:var(--blue);font-size:.74rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase
+    }
+    h2{
+      color:var(--navy);
+      font-size:clamp(1.8rem,3.2vw,2.55rem);
+      line-height:1.08;
+      margin:5px 0 0;
+      text-wrap:balance;
+    }
+    h3{color:var(--navy);line-height:1.2}
+    .section-note{
+      font-size:.9rem;
+      color:var(--muted);
+      max-width:52ch;
+      text-align:right;
+      line-height:1.5;
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+    }
+
+    /* Key figures */
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:6px;
+    }
+    .metric{
+      padding:25px 24px 23px;
+      position:relative;
+      overflow:hidden;
+      min-height:205px;
+    }
+    .metric .labeltop{
+      color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800
+    }
+    .metric .value{
+      margin-top:6px;color:var(--navy);font-size:clamp(2.6rem,5vw,4rem);
+      line-height:.95;font-weight:900;letter-spacing:-.055em
+    }
+    .metric .unit{font-size:.48em;letter-spacing:-.02em}
+    .metric .desc{margin-top:9px;font-weight:760;max-width:29ch}
+    .metric .source{margin-top:10px;color:var(--muted);font-size:.79rem}
+    .metric::after{
+      content:"";position:absolute;width:110px;height:110px;border-radius:50%;
+      right:-42px;bottom:-48px;background:var(--blue-soft)
+    }
+
+    /* Editorial summary */
+    .summary-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+    .article{padding:34px}
+    .article p{font-size:1.04rem;margin:0 0 1.05em}
+    .leadp{font-size:1.15rem!important;color:#263b53}
+    .callout{
+      border-left:4px solid var(--red);
+      background:#fbf5f5;
+      padding:17px 19px;border-radius:10px;margin:24px 0
+    }
+    .callout b{color:#8c2d2d}
+    .sidecol{display:grid;gap:16px}
+    .sidebox{padding:23px}
+    .sidebox ul{padding-left:20px;margin-bottom:0}
+    .tagrow{display:flex;flex-wrap:wrap;gap:7px}
+    .tag{
+      padding:6px 9px;border-radius:999px;background:var(--blue-soft);
+      color:var(--navy);font-size:.78rem;font-weight:780;border:1px solid #d7e8f6
+    }
+
+
+    .section[id="podaci"]{
+      position:relative;
+      padding-top:22px;
+    }
+    .section[id="podaci"]::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--navy),var(--blue),transparent 78%);
+    }
+    .section[id="podaci"] .section-head{
+      margin-top:2px;
+    }
+
+    /* Charts */
+    .chartgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .chartcard{padding:25px}
+    .charthead{display:flex;justify-content:space-between;align-items:start;gap:20px}
+    .charttitle{font-size:1.1rem;color:var(--navy);font-weight:850;margin:0}
+    .chartsub{font-size:.87rem;color:var(--muted);margin:4px 0 14px}
+    .pill{
+      font-size:.72rem;font-weight:850;color:var(--navy);
+      background:var(--blue-soft);padding:5px 8px;border-radius:999px;white-space:nowrap
+    }
+    .chartarea{
+      min-height:300px;
+      margin-top:4px;
+      border-top:1px solid #eef2f6;
+      padding-top:8px;
+    }
+    .axis{stroke:#c3cfdb;stroke-width:1}
+    .gridline{stroke:#e7edf3;stroke-width:1}
+    .chartlabel{font-size:11.5px;fill:#647386}
+    .chartvalue{font-size:11.5px;font-weight:800;fill:#1a3553}
+    .bar{fill:var(--blue)}
+    .bar-accent{fill:var(--gold)}
+    .line{fill:none;stroke:var(--navy);stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+    .point{fill:var(--navy)}
+    .charttools{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      padding-top:12px;margin-top:6px;border-top:1px solid var(--line)
+    }
+    .textbtn{
+      border:0;background:none;color:var(--blue);padding:0;font:inherit;font-size:.86rem;font-weight:760;cursor:pointer
+    }
+    details.data{
+      margin-top:13px;border-top:1px solid var(--line);padding-top:10px
+    }
+    details.data summary{cursor:pointer;color:var(--navy);font-weight:760;font-size:.87rem}
+    .datatable{
+      width:100%;border-collapse:collapse;margin-top:10px;font-size:.83rem
+    }
+    .datatable th,.datatable td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}
+    .datatable th{color:var(--navy);background:#f8fafc}
+
+    /* Evidence / partner roles */
+    .evidence{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px
+    }
+    .evidence .card{padding:25px}
+    .roles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+    .role{
+      border:1px solid var(--line);border-radius:13px;padding:15px;background:#fafcfe
+    }
+    .role b{display:block;color:var(--navy);margin-bottom:5px}
+
+
+    .chartarea-pro{min-height:320px}
+    .chart-insight{
+      margin:10px 0 0;
+      padding:12px 14px;
+      border-radius:11px;
+      background:#f6f9fc;
+      border:1px solid var(--line);
+      color:#44556a;
+      font-size:.88rem;
+      line-height:1.48;
+    }
+    .chart-insight strong{color:var(--navy);margin-right:5px}
+    .chart-switch{
+      display:inline-flex;
+      border:1px solid var(--line-strong);
+      border-radius:10px;
+      padding:3px;
+      background:#f7f9fb;
+      margin-bottom:8px;
+    }
+    .switch-btn{
+      border:0;
+      background:transparent;
+      color:#536276;
+      padding:7px 10px;
+      border-radius:7px;
+      font:inherit;
+      font-size:.78rem;
+      font-weight:780;
+      cursor:pointer;
+    }
+    .switch-btn.active{background:#fff;color:var(--navy);box-shadow:0 2px 7px rgba(17,44,74,.08)}
+    .benchmark{stroke:#c93b3b;stroke-width:2;stroke-dasharray:7 6}
+    .benchmark-label{font-size:11px;font-weight:800;fill:#a53232}
+    .composition-grid{
+      display:grid;
+      grid-template-columns:1.05fr .75fr 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    .composition-card{padding:22px}
+    .donut-row{display:grid;grid-template-columns:116px 1fr;gap:20px;align-items:center;margin-top:13px}
+    .donut{
+      --p:71;
+      width:110px;height:110px;border-radius:50%;
+      background:conic-gradient(var(--navy) calc(var(--p)*1%),#dfe8f0 0);
+      display:grid;place-items:center;position:relative;
+    }
+    .donut:after{content:"";position:absolute;width:72px;height:72px;border-radius:50%;background:#fff}
+    .donut span{position:relative;z-index:1;font-size:1.45rem;font-weight:900;color:var(--navy)}
+    .mini-stat{margin-top:8px;color:var(--muted);font-size:.84rem}
+    .split-stat{display:grid;grid-template-columns:1fr 1fr;margin-top:15px;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+    .split-stat>div{padding:18px;text-align:center}
+    .split-stat>div+div{border-left:1px solid var(--line)}
+    .split-stat strong{display:block;color:var(--navy);font-size:2rem;line-height:1}
+    .split-stat span{display:block;color:var(--muted);font-size:.82rem;margin-top:5px}
+    .small-copy{font-size:.88rem;color:#526175;margin-bottom:0}
+    /* EU radar */
+    .radar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .radar .card{padding:22px;border-top:4px solid var(--blue)}
+    .radar .card:nth-child(2){border-top-color:var(--gold)}
+    .radar .card:nth-child(3){border-top-color:var(--success)}
+    .radar small{font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .radar h3{margin:7px 0 8px}
+    .radar p{margin:0;color:#415267}
+
+    /* Sources */
+    .sources{padding:25px}
+    .sources ol{padding-left:20px;margin-bottom:0}
+    .sources li{margin:9px 0}
+    .sources .method{
+      margin-top:20px;padding-top:16px;border-top:1px solid var(--line);
+      color:var(--muted);font-size:.89rem
+    }
+
+    /* Footer */
+    footer{background:#0a294f;color:#fff;margin-top:56px}
+    footer .shell{
+      min-height:102px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px
+    }
+    footer strong{display:block}
+    footer span{display:block;color:rgba(255,255,255,.72);font-size:.86rem;max-width:70ch;margin-top:5px}
+    footer a{color:#fff}
+
+    .toast{
+      position:fixed;right:18px;bottom:18px;z-index:100;
+      background:#132f4c;color:#fff;padding:11px 14px;border-radius:10px;
+      box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s ease
+    }
+    .toast.show{opacity:1;transform:none}
+
+
+    @media(max-width:1040px){
+      .links a{font-size:.79rem;padding:7px 7px}
+      .pubnav .shell{gap:14px}
+    }
+    @media(max-width:940px){
+      .hero .shell,.summary-grid,.evidence{grid-template-columns:1fr}
+      .metrics,.radar{grid-template-columns:1fr}
+      .chartgrid,.regional-grid{grid-template-columns:1fr}
+      .composition-grid{grid-template-columns:1fr 1fr}
+      .coverpanel{min-height:280px}
+      .section-note{text-align:left}
+      .section-head{align-items:start;flex-direction:column}
+      .issue-strip{grid-template-columns:1fr 1fr}
+      .issue-strip>a:nth-child(2){border-right:0}
+      .issue-strip>a:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    }
+    @media(max-width:720px){
+      .pubnav .shell{grid-template-columns:minmax(0,1fr) auto;gap:10px}
+      .pubname{white-space:normal;line-height:1.12;font-size:.98rem}
+      .pubdate{font-size:.62rem;padding:6px 9px}
+      .links{display:none}
+      .hero .shell{padding-top:28px;padding-bottom:28px}
+      .coverpanel{min-height:245px}
+      .roles{grid-template-columns:1fr}
+      footer .shell{align-items:flex-start;flex-direction:column;padding-top:24px;padding-bottom:24px}
+    }
+    @media(max-width:520px){
+      .shell{padding-left:14px;padding-right:14px}
+      .govbar .shell{min-height:52px;padding-top:6px;padding-bottom:6px}
+      .govbrand{gap:10px}
+      .gov-logo{width:27px;height:36px}
+      .gov-office strong{font-size:.84rem}
+      .gov-office span{font-size:.70rem}
+      .actions{display:grid}
+      .btn{width:100%;justify-content:center}
+      .article,.chartcard{padding:20px}
+      .metric{padding:21px}
+      .cover-title{font-size:1.6rem}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{transition:none!important;animation:none!important}
+    }
+    @media print{
+      @page{size:A4;margin:16mm}
+      .pubnav,.actions,.toast{display:none!important}
+      body{background:#fff;font-size:10.5pt}
+      .shell{max-width:none;padding:0}
+      .govbar{background:#fff;color:#000;border-bottom:2px solid #000}
+      .checker{display:none}
+      .hero{background:#fff}
+      .hero .shell{display:block;padding:20px 0}
+      .coverpanel{display:none}
+      .card{box-shadow:none;break-inside:avoid}
+      .section{break-inside:auto}
+      .chartgrid,.metrics,.radar,.evidence{grid-template-columns:1fr}
+      footer{background:#fff;color:#000;border-top:1px solid #aaa}
+      footer span{color:#555}
+      footer a{color:#000}
+    }
+  
+    /* v19 — stable responsive data layout */
+    .chart-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+    .chartcard-wide{width:100%;min-width:0;overflow:hidden}
+    .chartarea-wide{width:100%;min-height:0;overflow:hidden}
+    .data-svg{display:block;width:100%;height:auto}
+    .voucher-view{display:none}
+    .voucher-view.active{display:block}
+    .composition-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .composition-grid>*,.donut-row>*,.charthead>*{min-width:0}
+    .donut-row{grid-template-columns:110px minmax(0,1fr)}
+    @media(max-width:940px){
+      .composition-grid{grid-template-columns:1fr}
+      .donut-row{grid-template-columns:96px minmax(0,1fr)}
+    }
+    @media(max-width:520px){
+      .chartcard-wide{padding:18px}
+      .charthead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+      .charttitle{font-size:1rem}
+      .chartsub{font-size:.82rem}
+      .composition-grid{grid-template-columns:1fr}
+      .donut-row{grid-template-columns:86px minmax(0,1fr);gap:16px}
+      .donut{width:84px;height:84px}
+      .donut:after{width:54px;height:54px}
+      .donut span{font-size:1.2rem}
+    }
+
+  
+    .data-return{
+      margin-top:12px;
+      padding-top:11px;
+      border-top:1px solid var(--line);
+    }
+    .data-return summary{
+      cursor:pointer;
+      color:var(--navy);
+      font-weight:800;
+      font-size:.88rem;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      max-width:100%;
+    }
+    .data-return summary::-webkit-details-marker{display:none}
+    .data-return summary::before{
+      content:"+";
+      display:grid;
+      place-items:center;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:var(--blue-soft);
+      color:var(--navy);
+      font-weight:900;
+      flex:0 0 auto;
+    }
+    .data-return[open] summary::before{content:"−"}
+    .table-wrap{
+      margin-top:10px;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      border:1px solid var(--line);
+      border-radius:11px;
+    }
+    .data-return .datatable{
+      margin:0;
+      min-width:420px;
+      background:#fff;
+    }
+    .data-return .datatable th{
+      background:#f5f8fb;
+      position:sticky;
+      top:0;
+    }
+    .data-return .datatable tr:last-child td{border-bottom:0}
+    @media(max-width:520px){
+      .data-return .datatable{min-width:380px;font-size:.8rem}
+      .data-return .datatable th,
+      .data-return .datatable td{padding:8px 9px}
+    }
+
+  </style>
+</head>
+
+<body>
+<a class="skip" href="#main">Preskoči na glavni sadržaj</a>
+
+<header class="govbar">
+  <div class="shell">
+    <div class="govbrand">
+      <div class="govmark-crop" aria-hidden="true">
+        <img
+          class="gov-mark"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/37/Vlada_Republike_Hrvatske.png"
+          alt="">
+      </div>
+      <div class="gov-office">
+        <strong>Vlada Republike Hrvatske</strong>
+        <span>Ured za socijalno partnerstvo</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="pubnav" aria-label="Navigacija izdanja">
+  <div class="shell">
+    <div class="pubname">Vjesnik o socijalnom dijalogu</div>
+    <div class="links">
+      <a href="#brojevi">Ključni brojevi</a>
+      <a href="#analiza">Analiza</a>
+      <a href="#podaci">Podaci</a>
+      <a href="#partneri">Socijalni partneri</a>
+      <a href="#eu">EU radar</a>
+      <a href="#izvori">Izvori</a>
+    </div>
+    <div class="pubdate">Rujan 2026.</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="shell">
+    <div>
+      <div class="overline">Tema mjeseca</div>
+      <h1>Obrazovanje uz rad<small>Od postojećih mjera do osobnih računa za učenje (ILA)</small></h1>
+      <p class="dek">Učenje tijekom cijeloga radnog vijeka postaje sve važniji uvjet zapošljivosti, produktivnosti i prilagodbe tehnološkim i zelenim promjenama. Ključno pitanje za Hrvatsku jest kako postojeći sustav vaučera nadograditi održivim modelom osobnih računa za učenje.</p>
+      <div class="meta">
+        <span>● 7 min čitanja</span>
+        <span>● podaci do rujna 2026.</span>
+        <span>● tema: vještine i tržište rada</span>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="#analiza">Pročitaj analizu</a>
+        <a class="btn secondary" href="https://partnerstvo.gov.hr/UserDocsImages/kategorije/Vjesnik_09.2026_Obrazovanje%20uz%20rad%20i%20individualni%20ra%C4%8Duni%20za%20u%C4%8Denje.pdf?vel=4425201" target="_blank" rel="noopener">Izvorni PDF ↗</a>
+      </div>
+    </div>
+
+    <aside class="coverpanel" aria-label="Sažetak teme">
+      <div class="cover-num">09</div>
+      <div>
+        <div class="cover-kicker">Vjesnik socijalnog dijaloga</div>
+        <div class="cover-title">Vještine za rad koji se mijenja</div>
+        <div class="cover-rule"></div>
+        <div class="cover-quote">Obrazovanje uz rad nije samo obrazovna politika — ono je pitanje radnih uvjeta, produktivnosti, napredovanja i sigurnosti zaposlenja.</div>
+        <div class="prototype-note">Rujan 2026. · tema mjeseca</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="shell" aria-label="Sadržaj izdanja">
+  <nav class="issue-strip" aria-label="Brza navigacija kroz izdanje">
+    <a href="#analiza"><span>01</span><strong>Glavna analiza</strong><small>ILA, vaučeri i učenje uz rad</small></a>
+    <a href="#podaci"><span>02</span><strong>Podaci</strong><small>Trendovi sudjelovanja i korištenja</small></a>
+    <a href="#partneri"><span>03</span><strong>Socijalni partneri</strong><small>Uloga sindikata i poslodavaca</small></a>
+    <a href="#eu"><span>04</span><strong>EU radar</strong><small>Što slijedi do 2030.</small></a>
+  </nav>
+</section>
+
+
+<main id="main" class="shell">
+  <section class="section" id="brojevi">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Ključni brojevi</div>
+        <h2>Što treba znati u 30 sekundi</h2>
+      </div>
+      <div class="section-note">Tri pokazatelja daju brzi pregled dosega obrazovanja odraslih i korištenja vaučera te pokazuju zašto je razvoj vještina važna tema tržišta rada i socijalnog dijaloga.</div>
+    </div>
+
+    <div class="metrics">
+      <article class="card metric">
+        <div class="labeltop">Sudjelovanje odraslih u učenju</div>
+        <div class="value">6,5<span class="unit">%</span></div>
+        <div class="desc">osoba od 25 do 64 godine u Hrvatskoj sudjelovalo je u obrazovanju i osposobljavanju u 2025.</div>
+        <div class="source">EU prosjek: 13,7 % · Eurostat</div>
+      </article>
+      <article class="card metric">
+        <div class="labeltop">Vaučeri za obrazovanje</div>
+        <div class="value">68.838</div>
+        <div class="desc">korisnika sudjelovalo je u programu vaučera od 2022. do rujna 2026.</div>
+        <div class="source">MROSP / HZZ</div>
+      </article>
+      <article class="card metric">
+        <div class="labeltop">Obrazovanje uz rad</div>
+        <div class="value">71<span class="unit">%</span></div>
+        <div class="desc">korisnika vaučera bilo je zaposleno, što potvrđuje važnost mjere za učenje uz rad.</div>
+        <div class="source">59 % korisnika su žene · HZZ</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="analiza">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">01 · Glavna analiza</div>
+        <h2>Od vaučera prema trajnom pravu na razvoj vještina</h2>
+      </div>
+    </div>
+
+    <div class="summary-grid">
+      <article class="card article">
+        <p class="leadp">Hrvatska je kroz sustav vaučera uspostavila široko korišten nacionalni instrument za stjecanje novih znanja i vještina. Sljedeće pitanje nije treba li ulagati u obrazovanje odraslih, nego kako ga učiniti dostupnijim, prenosivim i održivim kroz cijeli radni vijek.</p>
+
+        <p>Podaci pokazuju snažniji rast sudjelovanja odraslih u obrazovanju nakon 2022., ali i zastoj oko razine od 6–7 %. To upućuje na potrebu dodatnih mehanizama koji bi dosegnuli skupine zaposlenih kojima je obrazovanje teže dostupno — osobito osobe s nižim kvalifikacijama, radnike u malim i srednjim poduzećima te skupine u nepovoljnijem položaju.</p>
+
+        <div class="callout">
+          <b>Zašto je ovo tema socijalnog dijaloga?</b><br>
+          Vrijeme za učenje, financiranje, kriteriji dodatnih prava, dostupnost radnicima u MSP-ovima i povezivanje obrazovanja s planovima razvoja radne snage nisu samo tehnička pitanja sustava obrazovanja — ona izravno ulaze u područje radnih odnosa i kolektivnog pregovaranja.
+        </div>
+
+        <p>Preporuka Vijeća EU-a o individualnim računima za učenje otvara prostor da se obrazovno pravo ili sredstva vežu uz pojedinca i koriste u različitim fazama karijere. Hrvatski model ILA-e razvija se u sklopu projekta „Jačanje povezanosti obrazovanja i tržišta rada”, s ciljem razvoja modela do kraja 2027.</p>
+      </article>
+
+      <aside class="sidecol">
+        <div class="card sidebox">
+          <div class="eyebrow">Ključni nalaz</div>
+          <h3>Vaučeri su snažna osnova, ali nisu konačni model</h3>
+          <p>Program ima velik doseg i dominantno ga koriste zaposleni, no pojedine skupine i područja ostaju slabije zastupljeni. ILA može biti nadogradnja koja uvodi trajnost i prenosivost prava.</p>
+        </div>
+
+        <div class="card sidebox">
+          <div class="eyebrow">Fokus politike</div>
+          <div class="tagrow">
+            <span class="tag">upskilling</span>
+            <span class="tag">reskilling</span>
+            <span class="tag">MSP</span>
+            <span class="tag">ranjive skupine</span>
+            <span class="tag">kolektivno pregovaranje</span>
+            <span class="tag">ILA</span>
+          </div>
+        </div>
+
+        <div class="card sidebox">
+          <div class="eyebrow">Do 2030.</div>
+          <h3>EU cilj: 60 % odraslih godišnje u obrazovanju i osposobljavanju</h3>
+          <p>To povećava pritisak na države članice da razviju sustave koji učenje čine dostupnim tijekom cijeloga radnog vijeka.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+
+  <section class="section" id="podaci">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">02 · Podaci</div>
+        <h2>Podaci koji objašnjavaju promjenu</h2>
+      </div>
+      <div class="section-note">Sudjelovanje odraslih u učenju raste, ali Hrvatska je i dalje ispod europske razine. Vaučeri su se u nekoliko godina razvili u važan nacionalni instrument obrazovanja uz rad.</div>
+    </div>
+
+    <div class="chart-stack">
+      <article class="card chartcard chartcard-wide">
+        <div class="charthead">
+          <div>
+            <p class="charttitle">Sudjelovanje odraslih raste, ali jaz prema EU-u ostaje velik</p>
+            <p class="chartsub">Hrvatska, osobe 25–64 godine, sudjelovanje u obrazovanju u posljednja 4 tjedna (%)</p>
+          </div>
+          <span class="pill">2018.–2025.</span>
+        </div>
+        <div class="chartarea chartarea-wide"><svg class="data-svg" viewBox="0 0 760 330" role="img" aria-label="Sudjelovanje odraslih u obrazovanju u Hrvatskoj od 2018. do 2025., uz prosjek EU-a za 2025.">
+<line x1="56" y1="280.0" x2="736" y2="280.0" class="gridline"/>
+<text x="46" y="284.0" text-anchor="end" class="chartlabel">0</text>
+<line x1="56" y1="229.2" x2="736" y2="229.2" class="gridline"/>
+<text x="46" y="233.2" text-anchor="end" class="chartlabel">3</text>
+<line x1="56" y1="178.4" x2="736" y2="178.4" class="gridline"/>
+<text x="46" y="182.4" text-anchor="end" class="chartlabel">6</text>
+<line x1="56" y1="127.6" x2="736" y2="127.6" class="gridline"/>
+<text x="46" y="131.6" text-anchor="end" class="chartlabel">9</text>
+<line x1="56" y1="76.8" x2="736" y2="76.8" class="gridline"/>
+<text x="46" y="80.8" text-anchor="end" class="chartlabel">12</text>
+<line x1="56" y1="26.0" x2="736" y2="26.0" class="gridline"/>
+<text x="46" y="30.0" text-anchor="end" class="chartlabel">15</text>
+<line x1="56" y1="26" x2="56" y2="280" class="axis"/>
+<line x1="56" y1="280" x2="736" y2="280" class="axis"/>
+<text x="56.0" y="312" text-anchor="middle" class="chartlabel">2018</text>
+<text x="153.1" y="312" text-anchor="middle" class="chartlabel">2019</text>
+<text x="250.3" y="312" text-anchor="middle" class="chartlabel">2020</text>
+<text x="347.4" y="312" text-anchor="middle" class="chartlabel">2021</text>
+<text x="444.6" y="312" text-anchor="middle" class="chartlabel">2022</text>
+<text x="541.7" y="312" text-anchor="middle" class="chartlabel">2023</text>
+<text x="638.9" y="312" text-anchor="middle" class="chartlabel">2024</text>
+<text x="736.0" y="312" text-anchor="middle" class="chartlabel">2025</text>
+<line x1="56" y1="48.0" x2="736" y2="48.0" class="benchmark"/>
+<text x="736" y="39.0" text-anchor="end" class="benchmark-label">EU 2025: 13,7 %</text>
+<path d="M56.0,234.3 L153.1,220.7 L250.3,225.8 L347.4,190.3 L444.6,197.0 L541.7,171.6 L638.9,168.2 L736.0,169.9" class="line"/>
+<circle cx="56.0" cy="234.3" r="4.7" class="point"/>
+<text x="56.0" y="223.3" text-anchor="middle" class="chartvalue">2,7 %</text>
+<circle cx="153.1" cy="220.7" r="4.7" class="point"/>
+<circle cx="250.3" cy="225.8" r="4.7" class="point"/>
+<circle cx="347.4" cy="190.3" r="4.7" class="point"/>
+<text x="347.4" y="179.3" text-anchor="middle" class="chartvalue">5,3 %</text>
+<circle cx="444.6" cy="197.0" r="4.7" class="point"/>
+<circle cx="541.7" cy="171.6" r="4.7" class="point"/>
+<text x="541.7" y="160.6" text-anchor="middle" class="chartvalue">6,4 %</text>
+<circle cx="638.9" cy="168.2" r="4.7" class="point"/>
+<text x="638.9" y="157.2" text-anchor="middle" class="chartvalue">6,6 %</text>
+<circle cx="736.0" cy="169.9" r="4.7" class="point"/>
+<text x="736.0" y="158.9" text-anchor="middle" class="chartvalue">6,5 %</text>
+</svg></div>
+        <div class="chart-insight"><strong>Ključna poruka</strong> Hrvatska je 2025. na 6,5 %, dok je prosjek EU-a 13,7 %. Rast nakon 2020. je vidljiv, ali se posljednje dvije godine gotovo zaustavio.</div>
+        <div class="charttools">
+          <span class="section-note" style="text-align:left">Izvor: Eurostat, rujan 2026.</span>
+          <button class="textbtn" id="dlLearning" type="button">Preuzmi CSV</button>
+        </div>
+
+        <details class="data data-return">
+          <summary>Prikaži tablicu podataka</summary>
+          <div class="table-wrap">
+            <table class="datatable">
+              <thead>
+                <tr><th>Godina</th><th>Hrvatska (%)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>2018.</td><td>2,7</td></tr>
+                <tr><td>2019.</td><td>3,5</td></tr>
+                <tr><td>2020.</td><td>3,2</td></tr>
+                <tr><td>2021.</td><td>5,3</td></tr>
+                <tr><td>2022.</td><td>4,9</td></tr>
+                <tr><td>2023.</td><td>6,4</td></tr>
+                <tr><td>2024.</td><td>6,6</td></tr>
+                <tr><td>2025.</td><td>6,5</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+      </article>
+
+      <article class="card chartcard chartcard-wide">
+        <div class="charthead">
+          <div>
+            <p class="charttitle">Vaučeri: od pilot-instrumenta do masovnog programa</p>
+            <p class="chartsub">Novi korisnici po godini ili kumulativni broj korisnika od 2022.</p>
+          </div>
+          <span class="pill">2022.–IX/2026.</span>
+        </div>
+        <div class="chart-switch" role="group" aria-label="Prikaz grafikona vaučera">
+          <button class="switch-btn active" type="button" data-mode="annual">Po godinama</button>
+          <button class="switch-btn" type="button" data-mode="cumulative">Kumulativno</button>
+        </div>
+        <div class="chartarea chartarea-wide">
+          <div class="voucher-view active" data-view="annual"><svg class="data-svg" viewBox="0 0 760 330" role="img" aria-label="Novi korisnici vaučera po godinama">
+<line x1="64" y1="272.0" x2="736" y2="272.0" class="gridline"/>
+<text x="54" y="276.0" text-anchor="end" class="chartlabel">0</text>
+<line x1="64" y1="223.2" x2="736" y2="223.2" class="gridline"/>
+<text x="54" y="227.2" text-anchor="end" class="chartlabel">5k</text>
+<line x1="64" y1="174.4" x2="736" y2="174.4" class="gridline"/>
+<text x="54" y="178.4" text-anchor="end" class="chartlabel">10k</text>
+<line x1="64" y1="125.6" x2="736" y2="125.6" class="gridline"/>
+<text x="54" y="129.6" text-anchor="end" class="chartlabel">15k</text>
+<line x1="64" y1="76.8" x2="736" y2="76.8" class="gridline"/>
+<text x="54" y="80.8" text-anchor="end" class="chartlabel">20k</text>
+<line x1="64" y1="28.0" x2="736" y2="28.0" class="gridline"/>
+<text x="54" y="32.0" text-anchor="end" class="chartlabel">25k</text>
+<line x1="64" y1="272" x2="736" y2="272" class="axis"/>
+<rect x="96.3" y="202.9" width="69.9" height="69.1" rx="5" class="bar"/>
+<text x="131.2" y="193.9" text-anchor="middle" class="chartvalue">7.085</text>
+<text x="131.2" y="310" text-anchor="middle" class="chartlabel">2022.</text>
+<rect x="230.7" y="189.9" width="69.9" height="82.1" rx="5" class="bar"/>
+<text x="265.6" y="180.9" text-anchor="middle" class="chartvalue">8.410</text>
+<text x="265.6" y="310" text-anchor="middle" class="chartlabel">2023.</text>
+<rect x="365.1" y="136.3" width="69.9" height="135.7" rx="5" class="bar"/>
+<text x="400.0" y="127.3" text-anchor="middle" class="chartvalue">13.908</text>
+<text x="400.0" y="310" text-anchor="middle" class="chartlabel">2024.</text>
+<rect x="499.5" y="45.7" width="69.9" height="226.3" rx="5" class="bar"/>
+<text x="534.4" y="36.7" text-anchor="middle" class="chartvalue">23.190</text>
+<text x="534.4" y="310" text-anchor="middle" class="chartlabel">2025.</text>
+<rect x="633.9" y="113.4" width="69.9" height="158.6" rx="5" class="bar-accent"/>
+<text x="668.8" y="104.4" text-anchor="middle" class="chartvalue">16.245</text>
+<text x="668.8" y="310" text-anchor="middle" class="chartlabel">2026. do IX.</text>
+</svg></div>
+          <div class="voucher-view" data-view="cumulative"><svg class="data-svg" viewBox="0 0 760 330" role="img" aria-label="Kumulativni broj korisnika vaučera od 2022.">
+<line x1="64" y1="272.0" x2="736" y2="272.0" class="gridline"/>
+<text x="54" y="276.0" text-anchor="end" class="chartlabel">0</text>
+<line x1="64" y1="223.2" x2="736" y2="223.2" class="gridline"/>
+<text x="54" y="227.2" text-anchor="end" class="chartlabel">15k</text>
+<line x1="64" y1="174.4" x2="736" y2="174.4" class="gridline"/>
+<text x="54" y="178.4" text-anchor="end" class="chartlabel">30k</text>
+<line x1="64" y1="125.6" x2="736" y2="125.6" class="gridline"/>
+<text x="54" y="129.6" text-anchor="end" class="chartlabel">45k</text>
+<line x1="64" y1="76.8" x2="736" y2="76.8" class="gridline"/>
+<text x="54" y="80.8" text-anchor="end" class="chartlabel">60k</text>
+<line x1="64" y1="28.0" x2="736" y2="28.0" class="gridline"/>
+<text x="54" y="32.0" text-anchor="end" class="chartlabel">75k</text>
+<line x1="64" y1="272" x2="736" y2="272" class="axis"/>
+<path d="M64.0,249.0 L232.0,221.6 L400.0,176.3 L568.0,100.9 L736.0,48.0" class="line"/>
+<circle cx="64.0" cy="249.0" r="5" class="point"/>
+<text x="64.0" y="238.0" text-anchor="middle" class="chartvalue">7.085</text>
+<text x="64.0" y="310" text-anchor="middle" class="chartlabel">2022.</text>
+<circle cx="232.0" cy="221.6" r="5" class="point"/>
+<text x="232.0" y="210.6" text-anchor="middle" class="chartvalue">15.495</text>
+<text x="232.0" y="310" text-anchor="middle" class="chartlabel">2023.</text>
+<circle cx="400.0" cy="176.3" r="5" class="point"/>
+<text x="400.0" y="165.3" text-anchor="middle" class="chartvalue">29.403</text>
+<text x="400.0" y="310" text-anchor="middle" class="chartlabel">2024.</text>
+<circle cx="568.0" cy="100.9" r="5" class="point"/>
+<text x="568.0" y="89.9" text-anchor="middle" class="chartvalue">52.593</text>
+<text x="568.0" y="310" text-anchor="middle" class="chartlabel">2025.</text>
+<circle cx="736.0" cy="48.0" r="5" class="point"/>
+<text x="736.0" y="37.0" text-anchor="middle" class="chartvalue">68.838</text>
+<text x="736.0" y="310" text-anchor="middle" class="chartlabel">2026. do IX.</text>
+</svg></div>
+        </div>
+        <div class="chart-insight" id="voucherInsight"><strong>Ključna poruka</strong> Najveći godišnji broj novih korisnika zabilježen je 2025., a do rujna 2026. program je dosegnuo ukupno 68.838 korisnika.</div>
+        <div class="charttools">
+          <span class="section-note" style="text-align:left">Izvor: MROSP / HZZ.</span>
+          <button class="textbtn" id="dlVoucher" type="button">Preuzmi CSV</button>
+        </div>
+
+        <details class="data data-return">
+          <summary>Prikaži tablicu podataka</summary>
+          <div class="table-wrap">
+            <table class="datatable">
+              <thead>
+                <tr><th>Godina</th><th>Novi korisnici</th><th>Kumulativno</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>2022.</td><td>7.085</td><td>7.085</td></tr>
+                <tr><td>2023.</td><td>8.410</td><td>15.495</td></tr>
+                <tr><td>2024.</td><td>13.908</td><td>29.403</td></tr>
+                <tr><td>2025.</td><td>23.190</td><td>52.593</td></tr>
+                <tr><td>2026. do rujna</td><td>16.245</td><td>68.838</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+      </article>
+    </div>
+
+    <div class="composition-grid">
+      <article class="card composition-card">
+        <div class="eyebrow">Tko koristi vaučere?</div>
+        <div class="donut-row">
+          <div class="donut" style="--p:71" aria-label="71 posto korisnika je zaposleno"><span>71%</span></div>
+          <div>
+            <h3>Zaposleni čine većinu korisnika</h3>
+            <p>Program nije samo mjera za nezaposlene. Većina korisnika vaučer koristi za razvoj kompetencija uz postojeće zaposlenje.</p>
+            <div class="mini-stat"><b>29 %</b> nezaposleni i ostali korisnici</div>
+          </div>
+        </div>
+      </article>
+      <article class="card composition-card">
+        <div class="eyebrow">Struktura korisnika</div>
+        <div class="split-stat">
+          <div><strong>59 %</strong><span>žene</span></div>
+          <div><strong>41 %</strong><span>muškarci</span></div>
+        </div>
+        <p class="small-copy">Rodna struktura pokazuje nešto veću zastupljenost žena među korisnicima programa.</p>
+      </article>
+      <article class="card composition-card">
+        <div class="eyebrow">Policy signal</div>
+        <h3>Sljedeći izazov nije samo broj korisnika</h3>
+        <p>Za ILA model bit će važno pratiti tko ostaje izvan sustava: radnici s nižim kvalifikacijama, zaposleni u manjim poduzećima te osobe koje teško mogu uskladiti učenje i rad.</p>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="section" id="partneri">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">03 · Socijalni partneri</div>
+        <h2>Gdje konkretno ulaze sindikati i poslodavci</h2>
+      </div>
+    </div>
+
+    <div class="evidence">
+      <article class="card">
+        <h3>U oblikovanju modela ILA-e</h3>
+        <p>Socijalni partneri mogu sudjelovati u definiranju prioritetnih skupina i sektora, kriterija dodatnih obrazovnih prava, načina korištenja vremena za učenje i mehanizama praćenja kvalitete.</p>
+        <div class="roles">
+          <div class="role"><b>Sindikati</b>Prepoznaju potrebe radnika, osobito skupina s manjim pristupom učenju, te mogu ugovarati prava kroz kolektivne ugovore.</div>
+          <div class="role"><b>Poslodavci</b>Prepoznaju vještine potrebne za razvoj djelatnosti, tehnološku prilagodbu i razvoj radnih mjesta.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>U kolektivnom pregovaranju</h3>
+        <p>Obrazovanje uz rad može se pretvoriti iz opće politike u konkretno radno pravo: plaćeno vrijeme za učenje, sufinanciranje programa, obveze poslodavca, prioritetne skupine zaposlenih i planovi razvoja kompetencija.</p>
+        <div class="callout" style="margin-bottom:0">
+          <b>Praktično pitanje za pregovore:</b><br>
+          Kako podijeliti vrijeme, trošak i korist od usavršavanja između radnika, poslodavca i javnog sustava?
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="eu">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">04 · EU radar</div>
+        <h2>Tri okvira koja vrijedi pratiti</h2>
+      </div>
+    </div>
+
+    <div class="radar">
+      <article class="card">
+        <small>Preporuka Vijeća EU-a</small>
+        <h3>Individual Learning Accounts</h3>
+        <p>Pravo ili sredstva vezani uz pojedinca, uz mogućnost korištenja kroz različite faze radnog vijeka i dodatnu podršku onima kojima je usavršavanje najpotrebnije.</p>
+      </article>
+      <article class="card">
+        <small>Europski stup socijalnih prava</small>
+        <h3>60 % odraslih godišnje do 2030.</h3>
+        <p>Akcijski plan postavlja cilj snažnog povećanja sudjelovanja odraslih u obrazovanju i osposobljavanju.</p>
+      </article>
+      <article class="card">
+        <small>Nacionalna provedba</small>
+        <h3>Hrvatski model ILA-e do kraja 2027.</h3>
+        <p>Model se razvija kroz projekt „Jačanje povezanosti obrazovanja i tržišta rada”, uz planirano uključivanje ministarstava, institucija i socijalnih partnera.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="izvori">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">05 · Izvori</div>
+        <h2>Jasan trag do podataka i dokumenta</h2>
+      </div>
+    </div>
+
+    <div class="card sources">
+      <ol>
+        <li><a href="https://partnerstvo.gov.hr/vjesnik-o-socijalnom-dijalogu/rujan-2026-obrazovanje-uz-rad-od-postojecih-mjera-do-osobnih-racuna-za-ucenje-ila/279" target="_blank" rel="noopener">Ured za socijalno partnerstvo — rujansko izdanje Vjesnika 2026.</a></li>
+        <li><a href="https://partnerstvo.gov.hr/UserDocsImages/kategorije/Vjesnik_09.2026_Obrazovanje%20uz%20rad%20i%20individualni%20ra%C4%8Duni%20za%20u%C4%8Denje.pdf?vel=4425201" target="_blank" rel="noopener">Izvorni PDF: „Obrazovanje uz rad — od postojećih mjera do osobnih računa za učenje (ILA)”</a></li>
+        <li><a href="https://ec.europa.eu/eurostat/" target="_blank" rel="noopener">Eurostat — statistika sudjelovanja odraslih u obrazovanju i osposobljavanju.</a></li>
+        <li><a href="https://vauceri.hzz.hr/" target="_blank" rel="noopener">Hrvatski zavod za zapošljavanje — vaučeri za obrazovanje.</a></li>
+      </ol>
+      <div class="method"><strong>Metodološka napomena:</strong> brojčani podaci i ključne tvrdnje temelje se na službenom Vjesniku Ureda za socijalno partnerstvo za rujan 2026. i navedenim izvorima podataka.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    <div>
+      <strong>Vjesnik o socijalnom dijalogu</strong>
+      <span>Ured za socijalno partnerstvo · Vlada Republike Hrvatske</span>
+    </div>
+    <a href="#main">Na vrh ↑</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">CSV je pripremljen.</div>
+
+<script>
+(function(){
+  "use strict";
+  const learning = [[2018,2.7],[2019,3.5],[2020,3.2],[2021,5.3],[2022,4.9],[2023,6.4],[2024,6.6],[2025,6.5]];
+  const vouchers = [["2022.",7085],["2023.",8410],["2024.",13908],["2025.",23190],["2026. do IX.",16245]];
+
+  function downloadCsv(filename, rows){
+    const csv=rows.map(row=>row.map(cell=>{
+      const text=String(cell).replaceAll('"','""');
+      return /[;"\n]/.test(text)?`"${text}"`:text;
+    }).join(";")).join("\n");
+    const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1200);
+    const toast=document.getElementById("toast");
+    if(toast){toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1500);}
+  }
+
+  const dlLearning=document.getElementById("dlLearning");
+  if(dlLearning) dlLearning.addEventListener("click",()=>{
+    downloadCsv("sudjelovanje_odraslih_u_obrazovanju_2018_2025.csv",[["Godina","Udio (%)"],...learning]);
+  });
+
+  const dlVoucher=document.getElementById("dlVoucher");
+  if(dlVoucher) dlVoucher.addEventListener("click",()=>{
+    let running=0;
+    const rows=vouchers.map(([y,v])=>[y,v,(running+=v)]);
+    downloadCsv("korisnici_vaucera_2022_2026.csv",[["Godina","Novi korisnici","Kumulativno"],...rows]);
+  });
+
+  document.querySelectorAll(".switch-btn").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const mode=btn.dataset.mode;
+      document.querySelectorAll(".switch-btn").forEach(b=>b.classList.toggle("active",b===btn));
+      document.querySelectorAll(".voucher-view").forEach(v=>v.classList.toggle("active",v.dataset.view===mode));
+      const insight=document.getElementById("voucherInsight");
+      if(insight){
+        insight.innerHTML = mode==="cumulative"
+          ? "<strong>Ključna poruka</strong> Program je do rujna 2026. dosegnuo 68.838 korisnika, što jasno pokazuje brz rast njegova dosega."
+          : "<strong>Ključna poruka</strong> Najveći godišnji broj novih korisnika zabilježen je 2025., a do rujna 2026. program je dosegnuo ukupno 68.838 korisnika.";
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
